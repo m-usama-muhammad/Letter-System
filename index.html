@@ -1163,7 +1163,7 @@ This browser cannot link to a file on your computer. Please use Chrome or Edge t
 <div class="causelist-table-wrap" id="causeListTableWrap">
 <table class="causelist-table" id="causeListTable">
 <thead>
-<tr><th>S.No</th><th>Complainant</th><th>Agency / Department</th><th>Subject</th><th>Last Letter</th><th></th></tr>
+<tr><th>S.No</th><th>Case No</th><th>Complainant</th><th>Agency / Department</th><th>Last Letter</th><th></th></tr>
 </thead>
 <tbody id="causeListBody"></tbody>
 </table>
@@ -1824,6 +1824,10 @@ const tdNo = document.createElement("td");
 tdNo.textContent = i + 1;
 tr.appendChild(tdNo);
 
+const tdCaseNo = document.createElement("td");
+tdCaseNo.textContent = row.caseNo;
+tr.appendChild(tdCaseNo);
+
 const tdName = document.createElement("td");
 tdName.textContent = row.complainant;
 tr.appendChild(tdName);
@@ -1831,10 +1835,6 @@ tr.appendChild(tdName);
 const tdAgency = document.createElement("td");
 tdAgency.textContent = row.agency;
 tr.appendChild(tdAgency);
-
-const tdSubject = document.createElement("td");
-tdSubject.textContent = row.subject;
-tr.appendChild(tdSubject);
 
 const tdLetter = document.createElement("td");
 tdLetter.textContent = row.lastLetterType;
@@ -1892,10 +1892,10 @@ const headerRow = new TableRow({
 tableHeader: true,
 children: [
 headCell("S.No", 6),
-headCell("Complainant", 24),
-headCell("Agency / Department", 22),
-headCell("Subject", 33),
-headCell("Last Letter", 15)
+headCell("Case No", 20),
+headCell("Complainant", 28),
+headCell("Agency / Department", 26),
+headCell("Last Letter", 20)
 ]
 });
 
@@ -1903,10 +1903,10 @@ const bodyRows = list.map(function (row, i) {
 return new TableRow({
 children: [
 bodyCell(i + 1, 6, true),
-bodyCell(row.complainant, 24, false),
-bodyCell(row.agency, 22, false),
-bodyCell(row.subject, 33, false),
-bodyCell(row.lastLetterType, 15, false)
+bodyCell(row.caseNo, 20, false),
+bodyCell(row.complainant, 28, false),
+bodyCell(row.agency, 26, false),
+bodyCell(row.lastLetterType, 20, false)
 ]
 });
 });
@@ -1915,7 +1915,7 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 15840, height: 12240 }, // landscape Letter
+size: { width: 16838, height: 11906 }, // landscape A4
 margin: { top: 720, bottom: 720, left: 720, right: 720 }
 }
 },
@@ -2967,8 +2967,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -3118,8 +3118,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -3341,8 +3341,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -3595,8 +3595,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -3717,8 +3717,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -3824,8 +3824,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -3915,8 +3915,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -4015,8 +4015,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
@@ -4104,8 +4104,8 @@ const doc = new Document({
 sections: [{
 properties: {
 page: {
-size: { width: 12240, height: 15840 },
-margin: { top: 1714, bottom: 288, left: 1800, right: 1440 }
+size: { width: 11906, height: 16838 }, // A4
+margin: { top: 1714, bottom: 288, left: 1800, right: 1106 }
 }
 },
 children: [
